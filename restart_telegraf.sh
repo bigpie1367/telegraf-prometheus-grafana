@@ -7,7 +7,7 @@ echo "DOCKER_GROUP_ID=${DOCKER_GROUP_ID}" > .env
 docker-compose -p telegraf -f telegraf.yml down
 
 if [ "$1" == "build" ]; then
-    docker compose -p telegraf -f telegraf.yml up --build -d
+    docker compose -f telegraf.yml up --build -d      
 else
-    docker compose -p telegraf -f telegraf.yml up -d
+    docker compose -f telegraf.yml up -d      
 fi
