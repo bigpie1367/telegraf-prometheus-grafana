@@ -1,0 +1,12 @@
+cluster.name: "docker-cluster"
+node.name: "elasticsearch"
+network.host: 0.0.0.0
+http.port: 9200
+discovery.type: single-node
+
+# Security settings
+xpack.security.enabled: false
+
+# Paths
+path.data: /usr/share/elasticsearch/data
+path.logs: /usr/share/elasticsearch/logs
