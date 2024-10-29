@@ -5,7 +5,7 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - ./compose/monitor/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus-storage:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
