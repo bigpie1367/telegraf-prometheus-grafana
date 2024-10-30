@@ -805,6 +805,32 @@
         }
       ],
       "title": "Exited Container",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "labelsToFields": true,
+            "reducers": [
+              "lastNotNull"
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Field": true,
+              "Last *": true,
+              "__name__": true,
+              "host": true,
+              "job": true
+            },
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {}
+          }
+        }
+      ],
       "type": "table"
     },
     {
@@ -1073,8 +1099,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -1181,8 +1206,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "semi-dark-green",
-                "value": null
+                "color": "semi-dark-green"
               }
             ]
           },
@@ -1285,8 +1309,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -2116,6 +2139,6 @@
   "timezone": "browser",
   "title": "Host System and Docker Container Metrics",
   "uid": "cdui3uxlyc9a8c",
-  "version": 1,
+  "version": 3,
   "weekStart": ""
 }
