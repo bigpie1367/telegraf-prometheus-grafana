@@ -6,8 +6,7 @@ services:
     hostname: telegraf
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf     # Telegraf 설정 파일 마운트
-      - ./check_docker.sh:/app/check_docker.sh
-      - ./check_cert.sh:/app/check_cert.sh
+      - ./scripts/:/app/
       - /var/run/docker.sock:/var/run/docker.sock       # Docker 소켓 파일 마운트
       - /proc:/host/proc:ro                             # 호스트의 /proc 디렉토리 마운트
       - /sys:/host/sys:ro                               # 호스트의 /sys 디렉토리 마운트
